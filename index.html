@@ -5,10 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <Tytle>khokontripura</Tytle>
+    <style>
+        .bg-image{
+            background-image: url("./image/programming-background.jpg.png"); 
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+    </style>
   </head>
   <body>
     
-    <nav class="p-5 flex  item-center justify-around shadow-md ">
+    <nav class="p-5 flex  item-center justify-around shadow-md  bg-transparent fixed w-full">
 
         <h1 class="text-3xl front-bold front-bold">logo</h1>
         <ul class="flex gap-10">
@@ -19,7 +28,20 @@
             <li><a href="">contact</a></li>
             
             </ul>
-        </nav>
+            </ul>
+        </nav> 
+        <header class="bg-image flex items-end justify-around ">
+            <div class="w1/2" pb-52 space-y-6> 
+                <h3>khokontripura</h3>
+                <h1 class="text-6xl text-white front-bold">I'm a Web Designer</h1>
+                <p class="text-xl text-slate-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquam rem delectus
+                </p>
+                <button class="p-3 text-white border- white-boder rounded-md">Go to porfulio</button>
+            </div>
+           
+            <img class="w-full" src="./image/khokontipra-removebg-preview.png"
+           
+        </header>
 
     </h1>
   </body>

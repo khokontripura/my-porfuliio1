@@ -1,48 +1,638 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <Tytle>khokontripura</Tytle>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Johne Smith - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .bg-image{
-            background-image: url("./image/programming-background.jpg.png"); 
-            height: 100vh;
-            background-size: cover;
-            background-repeat: no-repeat;
-
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 60px 20px;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .hero-image {
+            position: relative;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        
+        .hero-text p {
+            color: #b8b8b8;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            background-color: #c9a961;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+        
+        .btn-primary:hover {
+            background-color: #b8985a;
+        }
+        
+        .about-section {
+            background-color: white;
+            padding: 80px 20px;
+        }
+        
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-image {
+            position: relative;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+        }
+        
+        .about-text p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .about-author {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .about-author h3 {
+            color: #c9a961;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+        
+        .about-author p {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+        
+        .books-section {
+            background-color: #f5f5f5;
+            padding: 80px 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #1a1a1a;
+        }
+        
+        .books-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .book-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .book-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .book-image {
+            width: 100%;
+            height: 300px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #999;
+        }
+        
+        .book-info {
+            padding: 20px;
+        }
+        
+        .book-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+        
+        .book-price {
+            color: #c9a961;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .stars {
+            color: #c9a961;
+            font-size: 0.9rem;
+        }
+        
+        .books-center {
+            text-align: center;
+        }
+        
+        .stats-section {
+            background: linear-gradient(135deg, #c9a961 0%, #b8985a 100%);
+            color: white;
+            padding: 60px 20px;
+        }
+        
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .stat-item p {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .blog-section {
+            background-color: white;
+            padding: 80px 20px;
+        }
+        
+        .blog-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .blog-card {
+            background: #f5f5f5;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 250px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #999;
+        }
+        
+        .blog-content {
+            padding: 25px;
+        }
+        
+        .blog-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+        
+        .blog-date {
+            color: #c9a961;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+        
+        .blog-content p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+        
+        .testimonials-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .quote-icon {
+            font-size: 3rem;
+            color: #c9a961;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #b8b8b8;
+        }
+        
+        .testimonial-author {
+            color: #c9a961;
+            font-weight: 600;
+        }
+        
+        .footer-section {
+            background: linear-gradient(135deg, #c9a961 0%, #b8985a 100%);
+            color: white;
+            padding: 60px 20px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .contact-form {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .contact-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 0.9rem;
+        }
+        
+        .contact-form input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .contact-form button {
+            padding: 12px 25px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .contact-form button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .bottom-footer {
+            background-color: #1a1a1a;
+            color: #666;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        
+        header {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #c9a961;
+        }
+        
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content,
+            .about-content,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .books-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
         }
     </style>
-  </head>
-  <body>
-    
-    <nav class="p-5 flex  item-center justify-around shadow-md  bg-transparent fixed w-full">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">JS</div>
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
 
-        <h1 class="text-3xl front-bold front-bold">logo</h1>
-        <ul class="flex gap-10">
-            <li><a href="">home</a></li>
-            <li><a href="">service</a></li>
-            <li><a href="">about</a></li>
-            <li><a href="">porfulio</a></li>
-            <li><a href="">contact</a></li>
-            
-            </ul>
-            </ul>
-        </nav> 
-        <header class="bg-image flex items-end justify-around ">
-            <div class="w1/2" pb-52 space-y-6> 
-                <h3>khokontripura</h3>
-                <h1 class="text-6xl text-white front-bold">I'm a Web Designer</h1>
-                <p class="text-xl text-slate-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquam rem delectus
-                </p>
-                <button class="p-3 text-white border- white-boder rounded-md">Go to porfulio</button>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-image">
+                <img src="/placeholder.svg?height=400&width=350" alt="Johne Smith">
             </div>
-           
-            <img class="w-full" src="./image/khokontipra-removebg-preview.png"
-           
-        </header>
+            <div class="hero-text">
+                <h1>Johne<br>Smith</h1>
+                <p>Author, Writer, Inventor</p>
+                <p>Discover the world of creativity and imagination through my works. Explore my latest publications and creative endeavors.</p>
+                <button class="btn-primary">View My Work</button>
+            </div>
+        </div>
+    </section>
 
-    </h1>
-  </body>
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-content">
+            <div class="about-image">
+                <img src="/placeholder.svg?height=400&width=350" alt="Johne Smith">
+            </div>
+            <div class="about-text">
+                <h2>About me</h2>
+                <p>I have been pursuing a fascinating career as a creative writer. My passion for storytelling and innovative thinking has led me to create compelling narratives that resonate with audiences worldwide.</p>
+                <p>With over a decade of experience in the publishing industry, I have authored numerous bestselling books and contributed to various literary magazines. My work spans multiple genres, from fiction to self-help, each crafted with meticulous attention to detail.</p>
+                <p>Beyond writing, I am an avid speaker and mentor, sharing my knowledge with aspiring writers and creative professionals. I believe in the power of words to inspire, educate, and transform lives.</p>
+                <div class="about-author">
+                    <h3>Author</h3>
+                    <p>Johne Smith</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books Section -->
+    <section class="books-section">
+        <h2 class="section-title">New Books And CD</h2>
+        <div class="books-grid">
+            <div class="book-card">
+                <div class="book-image">📚</div>
+                <div class="book-info">
+                    <h3>Othello</h3>
+                    <div class="book-price">$17.00</div>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+            <div class="book-card">
+                <div class="book-image">📖</div>
+                <div class="book-info">
+                    <h3>Madness Life</h3>
+                    <div class="book-price">$22.00</div>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+            <div class="book-card">
+                <div class="book-image">📕</div>
+                <div class="book-info">
+                    <h3>Love is Love</h3>
+                    <div class="book-price">$23.00</div>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+            <div class="book-card">
+                <div class="book-image">💿</div>
+                <div class="book-info">
+                    <h3>Give Me Also</h3>
+                    <div class="book-price">$18.00</div>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+        </div>
+        <div class="books-center">
+            <button class="btn-primary">View More</button>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>50</h3>
+                <p>Books</p>
+            </div>
+            <div class="stat-item">
+                <h3>600</h3>
+                <p>Pages</p>
+            </div>
+            <div class="stat-item">
+                <h3>2000</h3>
+                <p>Sales</p>
+            </div>
+            <div class="stat-item">
+                <h3>125</h3>
+                <p>Awards</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <h2 class="section-title">My Blog</h2>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <div class="blog-image">📖</div>
+                <div class="blog-content">
+                    <h3>The Journey Under the Waves</h3>
+                    <div class="blog-date">October 15, 2024</div>
+                    <p>Explore the depths of imagination as we dive into an underwater adventure filled with mystery and wonder. A tale of discovery and courage.</p>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-image">✍️</div>
+                <div class="blog-content">
+                    <h3>Writing Tips for Beginners</h3>
+                    <div class="blog-date">October 10, 2024</div>
+                    <p>Learn essential techniques to improve your writing skills. From character development to plot structure, master the fundamentals of storytelling.</p>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-image">📚</div>
+                <div class="blog-content">
+                    <h3>The Journey Under the Waves</h3>
+                    <div class="blog-date">October 5, 2024</div>
+                    <p>Discover how literature shapes our understanding of the world. A deep dive into the impact of great books on society and culture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="testimonial-content">
+            <div class="quote-icon">❝</div>
+            <p class="testimonial-text">Reading Johne's work has been transformative. His ability to weave complex emotions into compelling narratives is unmatched. Every page leaves you wanting more, and his insights into human nature are profound and thought-provoking.</p>
+            <p class="testimonial-author">— David Dixon<br><span style="font-size: 0.85rem; color: #999;">Reader</span></p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section class="footer-section">
+        <div class="footer-content">
+            <div>
+                <p style="margin-bottom: 20px;">Follow us!</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div>
+                <p style="margin-bottom: 20px;">Subscribe to our newsletter</p>
+                <form class="contact-form" onsubmit="handleSubscribe(event)">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Footer -->
+    <div class="bottom-footer">
+        <p>&copy; 2025 Johne Smith. All rights reserved. | Design by Creative Studio</p>
+    </div>
+
+    <script>
+        // Menu toggle functionality
+        const menuToggle = document.getElementById('menuToggle');
+        menuToggle.addEventListener('click', function() {
+            alert('Mobile menu would be implemented here');
+        });
+
+        // Subscribe form handler
+        function handleSubscribe(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            alert(`Thank you for subscribing with ${email}!`);
+            event.target.reset();
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
 </html>
